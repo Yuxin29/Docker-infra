@@ -1,27 +1,28 @@
 
-## CMD
-- docker imgages: check local packages
+## Docker Workflow: Images -> DockerFile -> Container
+
 ```c
-REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
-nginx         latest    9f33606b3685   4 days ago     161MB
-hello-world   latest    e2ac70e7319a   3 months ago   10.1kB
+Dockerfile
+(Recipe)
+    │
+    │ docker build
+    ▼
+Image
+(Prepared Meal Kit)
+    │
+    │ docker run
+    ▼
+Container
+(Running Dish)
+    │
+    ├── can stop
+    ├── can restart
+    └── can be removed
+
+Image always stays unchanged.
 ```
-- docker ps: ps for process status: check which containers are be run
-```c
-CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                   NAMES
-5a52b898740b   nginx     "/docker-entrypoint.…"   55 minutes ago   Up 55 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   my-nginx
-```
-- docker ps -a: check all containers that are being run / not being run
-```c
-CONTAINER ID   IMAGE         COMMAND                  CREATED             STATUS                         PORTS                                   NAMES
-5a52b898740b   nginx         "/docker-entrypoint.…"   56 minutes ago      Up 56 minutes                  0.0.0.0:8080->80/tcp, :::8080->80/tcp   my-nginx
-76d3471deef1   hello-world   "/hello"                 About an hour ago   Exited (0) About an hour ago                                           intelligent_rhodes
-```
-- docker run -d -p 8080:80 --name my-nginx nginx
-    - d : detached: ryb ub backgroudn
-    --p 8080:80 : port, local host 8080, Nginx in container 80
-    
-## Diagram
+
+## Docker -> docker build -> docker run
 
 ```cpp
 VM          Docker  docker file --> docker build  -->  image                  --> docker run --> containner(an app or service)
@@ -38,3 +39,4 @@ HOUSE ───── Kitchen Recipe A -->  preparing  -->   │ package A：Ngi
                     Recipe C  -->  preparing  -->  │ package C：Hello World │  -->  cooking  -->  Dish C
                                                    └────────────────────────┘
 ```
+
