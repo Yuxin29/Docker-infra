@@ -49,7 +49,7 @@ CONTAINER ID   IMAGE         COMMAND                  CREATED             STATUS
 76d3471deef1   hello-world   "/hello"                 About an hour ago   Exited (0) About an hour ago                                           intelligent_rhodes
 ```
 
-## Docker Lifecycles
+## Docker Lifecycles  
 ### a typecal life of a docker
 ``` bash
 Dockerfile
@@ -103,3 +103,9 @@ docker network inspect inception-network
 ## main references
 - https://dev.to/alejiri/docker-nginx-wordpress-mariadb-tutorial-inception42-1eok
 
+- Host name: inception
+- Domain name: local
+- root password: Leikovu0
+- new user: yuwu
+- new user password: Leikovu0
+\

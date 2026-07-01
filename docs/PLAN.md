@@ -33,12 +33,12 @@ docker rmi ✅
 - Kitchen analogy diagrams. ✅
 
 
-### Day 2 (29.6) — Dockerfile
+## Day 2 (29.6) — Dockerfile
 
 ### Goal: Learn how Images are built.
 
 ### Learn
-- Dockerfile syntax
+- Dockerfile syntax ✅
 ```Dockerfile
 FROM
 RUN
@@ -47,33 +47,41 @@ WORKDIR
 CMD
 ENTRYPOINT
 ```
-- Docker layers
-- docker build
+- Docker layers  ✅
+     - each cmd, every cmd is a run
+     - use repeately, run only when changed
+- docker build  ✅
 
-### Practice
+### Practice ✅
 - Build a simple image: FROM debian:12
-``` bash
+``` Dockerfile
 RUN apt update
 RUN apt install -y nginx
+# -y here : it is to say yes when there are yes and no
 CMD ["nginx", "-g", "daemon off;"]
+# daemon: run in background, docker required foreground, thus daemon off
+# [] run after container starts
 ```
-- Build it:
+- Build it: ✅
 ```bash
 docker build -t my-nginx .
+# . : in the current directory
 ```
-- Run it:
+- Run it: ✅
 ``` bash
 docker run my-nginx
 ```
 
 ### Questions
-- Why do we use FROM?
-- Difference between CMD and ENTRYPOINT?
-- Why does Docker cache layers?
-- Why must Nginx run in the foreground?
+- Why do we use FROM?    ✅
+- Difference between CMD and ENTRYPOINT?     ✅
+     - coverable and non-coverable(compulsary)    
+- Why does Docker cache layers?    ✅
+     - save performance
+- Why must Nginx run in the foreground? ✅
 
 ### Deliverables
-- Your first custom Docker image.
+- Your first custom Docker image. ✅
 
 
 ## Day 3 (30.6) — Docker Compose + MariaDB
@@ -88,11 +96,11 @@ docker run my-nginx
 - Environment variables
 - Practice
 
-## Create:
+### Create:
 
 docker-compose.yml
 
-## Run:
+### Run:
 ``` bash
 docker compose up
 docker compose down
